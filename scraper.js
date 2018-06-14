@@ -20,7 +20,7 @@ let table = [["Title", "Price", "Image URL", "URL", "Time"]];
 
 // visit http://shirts4mike.com and uses http://shirts4mike.com/shirts.php as single entry point to scrape information
 const options = {
-  url: `http://shirts4mike.com/shits.php`,
+  url: `http://shirts4mike.com/shirts.php`,
   json: true
 }
 
