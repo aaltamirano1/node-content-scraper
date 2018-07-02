@@ -15,8 +15,8 @@ const rp = require('request-promise');
 const cheerio = require('cheerio');
 
 let links = [];
-// in csv file column headers are in this order: Title, Price, ImageURL, URL, Time
-let table = [["Title", "Price", "Image URL", "URL", "Time"]];
+// in csv file column headers are in this order: Price, Title, ImageURL, URL, Time
+let table = [["Price", "Title", "Image URL", "URL", "Time"]];
 
 // visit http://shirts4mike.com and uses http://shirts4mike.com/shirts.php as single entry point to scrape information
 const options = {
@@ -64,7 +64,7 @@ function getShirtDetails(){
           const imgUrl = `http://shirts4mike.com/` + $('.shirt-picture img').attr('src');
           const d = new Date();
           const time = d.getHours() +':'+ d.getMinutes() +':'+ d.getSeconds();
-          // in csv file column headers are in this order: Title, Price, ImageURL, URL, Time
+          // in csv file column headers are in this order: Price, Title, ImageURL, URL, Time
           table.push([price, title, url, imgUrl, time]);
           ++i;
           // keep running this function.
